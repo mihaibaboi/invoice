@@ -1,0 +1,12 @@
+<h1>Edit user details</h1>
+
+<div id='signup'>
+  <%= form_for(@user) do |f| %>
+    <table>
+      <%= render(:partial => 'form', :locals => {:f => f}) %>
+      <tr>
+        <td colspan='2'><%= submit_tag('Update User') %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>

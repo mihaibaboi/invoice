@@ -1,0 +1,13 @@
+<h1>Signup for an account</h1>
+<p>Fill in the form and get an account so you can use the application</p>
+
+<div id='signup'>
+<%= form_for(:user, :url => {:action => 'create'}) do |f| %>
+  <table>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <tr>
+      <td colspan='2'><%= submit_tag('Create User') %></td>
+    </tr>
+  </table>
+<% end %>
+</div>

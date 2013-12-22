@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.references :user_type
+      t.references :user_type, :default => 2
       t.string 'username', :limit => 25, :null => false
       t.string 'email', :limit => 50, :null => false
       t.string 'hashed_password', :limit => 40, :null => false # 40 characters in a SHA-1 string
