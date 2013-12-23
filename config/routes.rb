@@ -1,4 +1,5 @@
 Invoicing::Application.routes.draw do
+  root "public#index"
   #get "user/index"
   #get "user/new"
   #get "user/edit"
@@ -6,6 +7,7 @@ Invoicing::Application.routes.draw do
 
   get 'login' => 'auth#login'
   get 'logout' => 'auth#logout'
+  get 'signup' => 'users#new'
   
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

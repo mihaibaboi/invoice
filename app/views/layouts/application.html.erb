@@ -7,13 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id='wrapper'>
+  <!-- BEGIN flash notifications area -->
   <% unless flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
   <% end %>
+  <!-- END flash notifications area -->
+  <div id='header'>
+    <div id='user-control'>
+      <%= render(:partial => 'shared/user_control') %>
+    </div>
+    <div class='clear'></div>
 
-<%= yield %>
-
+    <h1>This is where the header logo/text would go</h1>
+  </div>
+  <div id='content-wrapper'>
+    <div id='content'>
+      <%= yield %>
+    </div>
+    <div id='sidebar'>
+      This is where the sidebar content would go
+    </div>
+  </div>
+  <div id='footer'>
+    &copy; Mihai Baboi | December 2013
+  </div>  
+</div>
 </body>
 </html>

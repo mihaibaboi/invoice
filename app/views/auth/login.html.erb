@@ -1,17 +1,19 @@
 <h1>Login</h1>
 
-<%= form_tag(:action => 'do_login', :html => {:method => :post}) do %>
-<table>
-  <tr>
-    <td><%= label_tag(:username) %></td>
-    <td><%= text_field_tag(:username) %></td>
-  </tr>
-  <tr>
-    <td><%= label_tag(:password) %></td>
-    <td><%= password_field_tag(:password) %></td>
-  </tr>
-  <tr>
-    <td colspan='2'><%= submit_tag('Login') %></td>
-  </tr>
-</table>
-<% end %>
+<div id='login'>
+  <%= form_tag(:action => 'do_login', :html => {:method => :post}) do %>
+  <table>
+    <tr>
+      <td><%= label_tag(:username) %></td>
+      <td><%= text_field_tag(:username) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag(:password) %></td>
+      <td><%= password_field_tag(:password) %></td>
+    </tr>
+    <tr>
+      <td colspan='2' class='align-right'><%= submit_tag('Login') %></td>
+    </tr>
+  </table>
+  <% end %>
+</div>

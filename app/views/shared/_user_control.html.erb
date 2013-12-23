@@ -1,0 +1,7 @@
+<% if session[:user_id] %>
+  <%= link_to('My Account', :controller => 'users', :action => 'show', :id => session[:user_id]) %>
+  <%= link_to('Logout', logout_path) %>
+<% else %>
+  <%= link_to('Login', login_path) %> |
+  <%= link_to('Sign up', signup_path) %>
+<% end %>
