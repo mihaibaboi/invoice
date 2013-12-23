@@ -1,6 +1,6 @@
 class AuthController < ApplicationController
   
-  before_filter :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+  before_filter :confirm_logged_in, :except => [:login, :do_login, :logout]
   
   def index
     login
