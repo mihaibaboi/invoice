@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   
   validates_presence_of :username
   validates_length_of :username, :within => 6..25
+  validates_uniqueness_of :username
   validates_presence_of :password, :on => :create
   validates_length_of :password, :minimum => 6, :on => :create
   validates_presence_of :email
@@ -22,6 +23,19 @@ class User < ActiveRecord::Base
   
   def self.hash_with_salt(password="", salt="")
     Digest::SHA1.hexdigest("Put #{salt} on the #{password}")
+  end
+
+  def self.authenticate(username="", password="")
+    user = User.where("username = ?", username).first
+    if user && user.password_match?(password)
+      return user
+    else
+      return false
+    end
+  end
+
+  def password_match?(password="")
+    hashed_password == User.hash_with_salt(password, salt)
   end
 
   private
