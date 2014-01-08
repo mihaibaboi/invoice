@@ -1,3 +1,11 @@
+<%
+  content_class = 'content'
+  sidebar_class = 'sidebar'
+  if (controller.controller_name == 'invoices' && controller.action_name == 'new')
+    content_class = 'content_invoicing'
+    sidebar_class = 'sidebar_invoicing'
+  end
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,10 +32,10 @@
     <h1>This is where the header logo/text would go</h1>
   </div>
   <div id='content-wrapper'>
-    <div id='content'>
+    <div id='content' class=<%= content_class %>>
       <%= yield %>
     </div>
-    <div id='sidebar'>
+    <div id='sidebar' class=<%= sidebar_class %>>
       This is where the sidebar content would go
     </div>
   </div>

@@ -56,15 +56,12 @@ div.notice {
   background-color: #CCFFFF;
   padding: 15px;
   float: left;
-  width: 620px;
   min-height: 500px;
 }
 
 #sidebar {
   background-color: #FFCC66;
   padding: 15px;
-  float: left;
-  width: 300px;
   height: 1000px;
   margin-bottom: -1000px;
 }
@@ -75,4 +72,41 @@ div.notice {
   font-size: 10px;
   background-color: #FFFF99;
   text-align: right;
+}
+
+div.content {
+  width: 620px;
+}
+
+div.content_invoicing {
+  width: 950px;
+}
+
+div.sidebar {
+  float: left;
+  width: 300px;
+}
+
+div.sidebar_invoicing {
+  display: none;
+}
+
+#supplier {
+  float: left;
+  width: 450px;
+}
+
+#supplier p label {
+  display: inline-block;
+  width: 140px;
+}
+
+#client {
+  float: right;
+  width: 450px;
+}
+
+#client p label {
+  display: inline-block;
+  width: 140px;
 }

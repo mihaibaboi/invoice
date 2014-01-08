@@ -1,0 +1,46 @@
+<h1>Create invoice</h1>
+
+<%= form_for(@invoice) do |f| %>
+<div id='supplier'>
+  <p><%= label_tag('supplier[name]', 'Name') %> <%= text_field_tag('supplier[name]') %></p>
+  <p><%= label_tag('supplier[registration_number]', 'CUI/CNP') %> <%= text_field_tag('supplier[registration_number]') %></p>
+  <p><%= label_tag('supplier[commercial_registration]', 'Commercial Registration') %> <%= text_field_tag('supplier[commercial_registration]') %></p>
+  <p><%= label_tag('supplier[bank_name]', 'Bank Name') %> <%= text_field_tag('supplier[bank_name]') %></p>
+  <p><%= label_tag('supplier[bank_account]', 'Bank Account') %> <%= text_field_tag('supplier[bank_account]') %></p>
+  <p><%= label_tag('supplier[address_line]', 'Address') %> <%= text_field_tag('supplier[address_line]') %></p>
+</div>
+<div id='client'>
+  <p><%= label_tag('client[name]', 'Name') %> <%= text_field_tag('client[name]') %></p>
+  <p><%= label_tag('client[registration_number]', 'CUI/CNP') %> <%= text_field_tag('client[registration_number]') %></p>
+  <p><%= label_tag('client[commercial_registration]', 'Commercial Registration') %> <%= text_field_tag('client[commercial_registration]') %></p>
+  <p><%= label_tag('client[bank_name]', 'Bank Name') %> <%= text_field_tag('client[bank_name]') %></p>
+  <p><%= label_tag('client[bank_account]', 'Bank Account') %> <%= text_field_tag('client[bank_account]') %></p>
+  <p><%= label_tag('client[address_line]', 'Address') %> <%= text_field_tag('client[address_line]') %></p>
+</div>
+<table>
+  <tr>
+    <td><%= f.label(:serial) %></td>
+    <td><%= f.text_field(:serial) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label(:number) %></td>
+    <td><%= f.text_field(:number) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label(:invoice_date) %></td>
+    <td><%= f.text_field(:invoice_date) %></td>
+  </tr>
+  <tr>
+    <td><%= label(:invoice_item, :description) %></td>
+    <td><%= text_field(:invoice_item, :description) %></td>
+  </tr>
+  <tr>
+    <td><%= label(:invoice_item, :measurement_units) %></td>
+    <td><%= text_field(:invoice_item, :measurement_units) %></td>
+  </tr>
+  <tr>
+    <td><%= label(:invoice_item, :unit_price) %></td>
+    <td><%= text_field(:invoice_item, :unit_price) %></td>
+  </tr>
+</table>
+<% end %>

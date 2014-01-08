@@ -17,7 +17,12 @@ class AuthController < ApplicationController
       session[:username] = authorised_user.username
       @user = authorised_user
       flash[:notice] = "You are now logged in as #{authorised_user.username}"
-      redirect_to(:controller => 'users', :action => 'show', :id => authorised_user.id)
+      logger.debug "The request URL was: #{request.referrer.inspect}"
+      if session[:redirect_url]
+        redirect_to(session[:redirect_url])
+      else
+        redirect_to(:controller => 'users', :action => 'show', :id => authorised_user.id)
+      end
     else
       flash[:notice] = "Invalid username/password combination."
       redirect_to(:action => 'login')      

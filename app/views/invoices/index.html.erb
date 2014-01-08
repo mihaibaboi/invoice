@@ -1,0 +1,19 @@
+<h1>Invoice list for user <%= session[:username] %></h1>
+<table>
+  <% unless @invoices.blank? %>
+    <% @invoices.each do |invoice| %>
+    <tr>
+      <td>Invoice serial</td>
+      <td>Invoice number</td>
+    </tr>
+    <tr>
+      <td><%= invoice.serial %></td>
+      <td><%= invoice.number %></td>
+    </tr>
+    <% end %>
+  <% else %>
+  <tr>
+    <td>You haven't added any invoices yet. Would you like to <%= link_to('add an invoice', new_invoice_path) %> now?</td>
+  </tr>
+  <% end %>
+</table>
